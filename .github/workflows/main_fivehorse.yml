@@ -32,6 +32,9 @@ jobs:
           # Copy public assets and static files to standalone directory
           cp -r public .next/standalone/public
           cp -r .next/static .next/standalone/.next/static
+          
+          # Fix start command in package.json for Azure App Service
+          sed -i 's/"start": "next start"/"start": "node server.js"/' .next/standalone/package.json
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
