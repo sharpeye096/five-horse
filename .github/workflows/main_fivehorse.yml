@@ -33,8 +33,7 @@ jobs:
           cp -r public .next/standalone/public
           cp -r .next/static .next/standalone/.next/static
           
-          # Fix start command in package.json for Azure App Service
-          sed -i 's/"start": "next start"/"start": "node server.js"/' .next/standalone/package.json
+          # No need to patch package.json, we will specify startup-command in deploy step
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -59,4 +58,5 @@ jobs:
           app-name: 'fivehorse'
           slot-name: 'Production'
           package: .
+          startup-command: 'node server.js'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_92C12E45ABDC4085ABCAFA442B486CBF }}
