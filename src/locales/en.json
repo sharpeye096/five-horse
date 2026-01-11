@@ -1,0 +1,32 @@
+{
+    "title": "Five Horse Chess",
+    "modes": {
+        "pvp": "PvP (2 Players)",
+        "pve": "PvE (vs CPU)"
+    },
+    "actions": {
+        "restart": "Restart Game",
+        "undo": "Undo Move",
+        "thinking": "AI Thinking..."
+    },
+    "status": {
+        "title": "Game Status",
+        "mode": "Mode: {{mode}}",
+        "turn": "Turn: {{player}}",
+        "winner": "Winner: {{winner}}",
+        "counts": "Piece Counts"
+    },
+    "players": {
+        "black": "Black",
+        "white": "White"
+    },
+    "rules": {
+        "title": "Game Rules",
+        "lineMovement": "Move along lines one step at a time. No jumping.",
+        "shoulderPole": "Shoulder Pole (Tiao): Move between two opponent pieces to capture them (O-Me-O).",
+        "clamp": "Clamp (Jia): Surround an opponent piece with two of yours (Me-O-Me) to capture it.",
+        "priority": "Priority: If a move creates both Pole and Clamp, Pole takes precedence.",
+        "win": "Winning: Capture all opponent pieces or trap them in the Maoce (Outhouse)."
+    },
+    "language": "Language"
+}
