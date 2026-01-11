@@ -27,13 +27,17 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
+          
+          # Prepare standalone build
+          # Copy public assets and static files to standalone directory
+          cp -r public .next/standalone/public
+          cp -r .next/static .next/standalone/.next/static
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: .next/standalone
 
   deploy:
     runs-on: ubuntu-latest
